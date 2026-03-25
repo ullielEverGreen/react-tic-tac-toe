@@ -2,45 +2,17 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from './assets/vite.svg'
 import heroImg from './assets/hero.png'
-import Board from './Board'
 import './App.css'
-import Children from './Children'
-import { ThemeProvider, useTheme } from './ThemeContext'
-import Heading from './Heading'
-import Section from './Section'
-
-// 深层嵌套组件
-function DeepButton() {
-  const { theme, toggleTheme } = useTheme()
-  return (
-    <button
-      onClick={toggleTheme}
-      // style={{
-      //   background: theme === 'light' ? 'black' : 'light',
-      //   color: theme === 'light' ? '#000' : '#ea0e0eff'
-      // }}
-    >
-      当前主题色：{theme}
-    </button>
-  )
-}
-
-// 中间组件（不需要传递props）
-function MiddleComponent() {
-  return (
-    <div>
-      <h2>中间组件</h2>
-      <DeepButton />
-    </div>
-  )
-}
+import Calc10 from './Calc10'
+import Content from './Content'
+import Lodash from './Lodash'
 
 function App() {
   const [count, setCount] = useState(0)
 
   return (
     <>
-      {/* <section id="center">
+      <section id="center">
         <div className="hero">
           <img src={heroImg} className="base" width="170" height="179" alt="" />
           <img src={reactLogo} className="framework" alt="React logo" />
@@ -55,16 +27,16 @@ function App() {
         <button className="counter" onClick={() => setCount((count) => count + 1)}>
           Count is {count}
         </button>
-      </section> */}
+        <Calc10 />
+      </section>
 
-      <Children />
+      <Lodash />
 
-      <ThemeProvider>
-        <div>Context api</div>
-        <MiddleComponent />
-      </ThemeProvider>
+      <Content />
 
-      <Section>
+      {/* <Children /> */}
+
+      {/* <Section>
         <Heading>主标题</Heading>
         <Section>
           <Heading>副标题</Heading>
@@ -81,13 +53,13 @@ function App() {
             </Section>
           </Section>
         </Section>
-      </Section>
+      </Section> */}
 
       {/* <div className="ticks">
         <Board />
       </div> */}
 
-      {/* <section id="next-steps">
+      <section id="next-steps">
         <div id="docs">
           <svg className="icon" role="presentation" aria-hidden="true">
             <use href="/icons.svg#documentation-icon"></use>
@@ -153,7 +125,7 @@ function App() {
       </section>
 
       <div className="ticks"></div>
-      <section id="spacer"></section> */}
+      <section id="spacer"></section>
     </>
   )
 }
