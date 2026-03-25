@@ -494,7 +494,7 @@ const UserProfileForm = () => {
             borderLeft: '3px solid #faad14',
             marginBottom: '20px'
           }}>
-          ⚠️ 您有未保存的更改
+          ⚠️ 您有未保存的更改 ⚠️
         </div>
       )}
 
